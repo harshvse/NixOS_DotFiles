@@ -3,8 +3,9 @@
 {
   # Module Imports
   imports = [
-    ./shells/sh_shell.nix
     ./hyprland/hyprland.nix
+    ./packages/shells/sh_shell.nix
+    ./packages/git.nix 
   ];
 
 

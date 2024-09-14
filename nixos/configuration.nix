@@ -2,14 +2,21 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs,lib, ... }:
 
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
-
+  
+  options = {
+    new.option = lib.mkOption{
+      type = lib.types.str;
+      default = "stuff";
+    };
+  };
+config = {
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -134,4 +141,5 @@
   system.stateVersion = "24.05"; # Did you read the comment?
   
   nix.settings.experimental-features = ["nix-command" "flakes"];
+};
 }
