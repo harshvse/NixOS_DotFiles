@@ -40,19 +40,8 @@
   services.xserver.enable = true;
 
   # Disable GNOME
-  services.xserver.displayManager.gdm.enable = false;
+  services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = false;
-
-  # Enable greetd for Wayland login
-  services.greetd = {
-    enable = true;
-    settings = {
-      default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd Hyprland";
-        user = "greeter";
-      };
-    };
-  };
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -110,6 +99,6 @@
     enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
-   environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.sessionVariables.WLR_NO_HARDWARE_CURSORS = "1";
 }

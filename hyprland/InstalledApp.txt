@@ -1,0 +1,7 @@
+Terminal - Kitty
+File Manager = Dolphin
+App Launcher Menu = wofi
+
+Wifi Manager nm-applet
+Bar = Waybar??
+Wallpaper = hyprpaper
