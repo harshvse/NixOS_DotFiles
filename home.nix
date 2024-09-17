@@ -1,11 +1,11 @@
-{ config, pkgs, ... }:
+{ config, pkgs,inputs, ... }:
 
 {
   # Module Imports
   imports = [
     ./hyprland/hyprland.nix
     ./packages/shells/sh_shell.nix
-    ./packages/git.nix 
+    ./packages/git.nix
   ];
 
 
@@ -13,6 +13,7 @@
   # manage.
   home.username = "harshvse";
   home.homeDirectory = "/home/harshvse";
+
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -25,6 +26,7 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
+  fonts.fontconfig.enable = true;
   home.packages = with pkgs; [
     wget
     curl
@@ -32,7 +34,8 @@
     discord
     neofetch
     zed-editor
-    
+    blender
+    (pkgs.nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of

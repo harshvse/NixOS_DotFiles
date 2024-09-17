@@ -1,0 +1,71 @@
+* {
+  border:none;
+  font-family: "FiraCode", monospace;
+  font-weight: bold;
+  font-size: 16px;
+  min-height: 0;
+}
+
+window#waybar {
+  background: rgba(21, 18, 27, 0.5);
+  color: #cdd6f4;
+  padding: 30px;
+  border: 2px solid white;
+}
+
+tooltip {}
+
+#workspaces button {
+    color: white;
+}
+
+#workspaces button.active {
+  color: orange;
+}
+
+#workspaces button.focused {
+  color: red;
+}
+
+#workspaces button.urgent {}
+
+#workspaces button:hover {}
+
+#custom-language,
+#custom-updates,
+#custom-caffeine,
+#custom-weather,
+#window,
+#clock,
+#battery,
+#pulseaudio,
+#network,
+#workspaces,
+#tray,
+#backlight {}
+
+#tray {}
+
+#workspaces {}
+
+#custom-caffeine {}
+
+#custom-language {}
+
+#custom-updates {}
+
+#window {}
+
+#clock {}
+
+#network {}
+
+#pulseaudio {}
+
+#pulseaudio.microphone {}
+
+#battery {}
+
+#custom-weather {}
+
+#custom-endright {}
