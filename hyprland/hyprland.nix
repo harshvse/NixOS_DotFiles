@@ -4,12 +4,12 @@
 
     imports = [
         ./hyprpaper.nix
-        ./waybar.nix
+        # ./waybar.nix
     ];
 
     home.packages = with pkgs; [
         wofi  # Application launcher
-        waybar  # Status bar
+        # waybar  # Status bar
         swaylock  # Screen locker
         swayidle  # Idle management daemon
         grim  # Screenshot utility
@@ -17,7 +17,6 @@
         mako  # Notification daemon
         kitty # Terminal application
         hyprpaper # Wallpaper application
-        ags # Widgets
         dracula-theme
     ];
 
@@ -49,7 +48,8 @@
 
             # exec-once = $terminal
             # exec-once = nm-applet &
-            exec-once = waybar &
+            # exec-once = waybar &
+            exec-once  = ags &
             exec-once = hyprctl setcursor Dracula-cursors 24 &
 
             #############################

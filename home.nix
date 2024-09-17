@@ -6,6 +6,7 @@
     ./hyprland/hyprland.nix
     ./packages/shells/sh_shell.nix
     ./packages/git.nix
+    ./hyprland/ags
   ];
 
 

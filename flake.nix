@@ -5,9 +5,10 @@
     nixpkgs.url = "nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    ags.url = "github:Aylur/ags";
   };
 
-  outputs = {self, nixpkgs,home-manager, ...}:
+  outputs = {self, nixpkgs,home-manager, ...}@inputs:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
@@ -22,6 +23,7 @@
       homeConfigurations = {
         harshvse = home-manager.lib.homeManagerConfiguration{
           inherit pkgs;
+          extraSpecialArgs = { inherit inputs; };
           modules = [ ./home.nix ];
         };
       };
